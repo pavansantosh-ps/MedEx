@@ -18,7 +18,7 @@ const create = () => {
         if(valid == true){
             router.push('/login');
         }
-    },[]);
+    },[valid]);
 
 
     async function handleSubmit(e) {

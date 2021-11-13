@@ -16,7 +16,7 @@ const login = () => {
         if(valid == true){
             router.push('/dashboard');
         }
-    },[])
+    },[valid])
 
     function handleSubmit(e) {
         e.preventDefault();

@@ -34,11 +34,11 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 
 	// Checks if password is correct or not
 	const isPasswordMatched = await user.comparePassword(password);
-
+	
 	if (!isPasswordMatched) {
 		return next(new ErrorHandler("Invalid Email Address or Password", 401));
 	}
-
+	console.log("User managed to log in");
 	sendToken(user, 200, res);
 });
 

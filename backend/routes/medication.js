@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/auth");
+const { isAuthenticatedUser } = require("../middlewares/auth");
 
 // Importing the required controllers from the controllers folder
 const {getAllMedicines, createMedicine} = require("../controllers/medicationController");

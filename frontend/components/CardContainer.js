@@ -9,9 +9,9 @@ const CardContainer = () => {
     const medicines = useContext(GlobalContext);
     console.log(medicines)
     return (
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex flex-wrap items-center justify-center h-screen">
             {medicines.medicines.map(medicine =>(
-                <div className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto" key={medicine._id}>
+                <div className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto mt-12" key={medicine._id}>
                     <Image alt="medicine image" src='/medicine.svg' width={500} height={300}/>
                     <div class="bg-white w-full p-4">
                         <p class="text-indigo-500 text-2xl font-medium">
@@ -24,8 +24,11 @@ const CardContainer = () => {
                             {medicine.information}
                         </p>
                         <div class="flex flex-wrap justify-starts items-center py-3 border-b-2 text-xs text-white font-medium">
-                            <span class="m-1 px-2 py-1 rounded bg-indigo-500">
-                                delete
+                            <span class="m-1 px-2 py-1 rounded bg-indigo-600">
+                                Buy
+                            </span>
+                            <span class="m-1 px-2 py-1 rounded bg-indigo-600">
+                                Delete
                             </span>
                         </div>
                     </div>

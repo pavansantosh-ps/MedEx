@@ -9,7 +9,7 @@ const {getMedicine, updateMedicine, deleteMedicine} = require("../controllers/me
 // Calling the respective controllers for the required operations
 router.route("/medication").get(getAllMedicines);
 router.route("/medication")
-    .post(isAuthenticatedUser, createMedicine);
+    .post(createMedicine);
 router.route("/medication/:medicationId")
     .get(isAuthenticatedUser, getMedicine)
     .put(isAuthenticatedUser, updateMedicine)

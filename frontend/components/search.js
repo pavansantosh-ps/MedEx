@@ -22,6 +22,7 @@ const search = () => {
         }).catch(function (error) {
             console.log(error);
         });  
+        alert("user is logged out");
     }
 
     return (

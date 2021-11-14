@@ -11,9 +11,6 @@ const login = () => {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [valid,setValid] = useState(false);
-    const [loggedIn,setLoggedIn] = useState(false);
-
-
 
     useEffect(() => {
         if(valid == true){

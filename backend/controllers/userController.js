@@ -53,4 +53,5 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
 		success: true,
 		message: "Logged out",
 	});
+	console.log("logged out");
 });

@@ -11,11 +11,11 @@ const CardContainer = () => {
 
     return (
         <div className="flex items-center justify-center h-screen">
-            <div className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto" >
+            <div className="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto" key={medicine.name}>
                 <Image alt="medicine image" src='/medicine.svg' width={500} height={300}/>
                 <div class="bg-white w-full p-4">
                     <p class="text-indigo-500 text-2xl font-medium">
-                        Should You Get Online Education?
+                        {medicine.name}
                     </p>
                     <p class="text-gray-800 text-sm font-medium mb-2">
                         A comprehensive guide about online education.

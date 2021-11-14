@@ -19,18 +19,24 @@ const login = () => {
     },[valid])
 
     function handleSubmit(e) {
+        let Valid = false;
+        Valid = Validation(email,password);
         e.preventDefault();
-        console.log(email,password);
-        axios.post('/user/login',{
-            email: email,
-            password: password,
-        }).then(function (response) {
-            console.log(response);
-            setValid(true);
-        }).catch(function (error) {
-            console.log(error);
-        });    
-        //should add validation
+        if(Valid){
+            console.log(email,password);
+            axios.post('/user/login',{
+                email: email,
+                password: password,
+            }).then(function (response) {
+                console.log(response);
+                setValid(true);
+            }).catch(function (error) {
+                console.log(error);
+            });    
+            alert("Account Logged in successfully");
+        }else{
+            alert("Enter Valid credentials");
+        }
     }
 
     function handleEmailChange(e){
@@ -39,6 +45,15 @@ const login = () => {
 
     function handlePassChange(e){
         setPassword(e.target.value);
+    }
+
+    function Validation(email,password){
+        if(email == "" || password == ""){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
 

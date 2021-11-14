@@ -10,7 +10,6 @@ exports.getAllMedicines = catchAsyncErrors(async (req, res, next) => {
 
     // Sending a success response
     res.status(200).json({
-        success: true,
         medicines
     });
 });

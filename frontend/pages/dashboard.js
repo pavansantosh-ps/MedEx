@@ -9,19 +9,18 @@ axios.defaults.baseURL = "http://localhost:4000/api/v1/"
 export async function getStaticProps() {
     const res = await axios.get('/medication');
     let data = res.data;
-
     return {
         props: {
-            medicine: data
+            data
         }
     };
 }
 
-const dashboard = (medicine) => {
+const dashboard = ({data}) => {
     return (
         <div>
             <Search></Search>
-            <GlobalContext.Provider value={medicine}>
+            <GlobalContext.Provider value={data}>
                 <CardContainer></CardContainer>
             </GlobalContext.Provider>
         </div>
